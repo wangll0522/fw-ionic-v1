@@ -1,0 +1,15 @@
+We could also configure these values at a component level. Take tabsPlacement, we can configure this as a property on our ion-tabs.
+
+<ion-tabs tabsPlacement="top">
+  <ion-tab tabTitle="Dash" tabIcon="pulse" [root]="tabRoot"></ion-tab>
+</ion-tabs>
+The last way we could configure is through URL query strings. This is useful for testing while in the browser. Simply add ?ionic<PROPERTYNAME>=<value> to the url.
+
+http://localhost:8100/?ionicTabsPlacement=bottom
+Any value can be added to config, and looked up at a later in any component.
+
+config.set('ios', 'favoriteColor', 'green');
+
+// from any page in your app:
+config.get('favoriteColor'); // 'green' when iOS
+A config value can come from anywhere and be anything, but there are default values for each mode. The theming documentation has a chart of the default mode configuration. The following chart displays each property with a description of what it controls.
